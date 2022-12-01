@@ -9,8 +9,10 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
-
+import os
 from pathlib import Path
+
+from dotenv import load_dotenv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -245,16 +247,20 @@ CELERY_RESULT_BACKEND = "redis://localhost:6379"
 
 # Full list of email settings:
 #   https://docs.djangoproject.com/en/3.2/ref/settings/#email
-# EMAIL_HOST = "localhost"
-# EMAIL_PORT = "25"
+EMAIL_HOST = "smtp.mail.ru"
+EMAIL_PORT = 465  # 2525
 
 # For debugging: python -m smtpd -n -c DebuggingServer localhost:25
-# EMAIL_HOST_USER = "django@geekshop.local"
-# EMAIL_HOST_PASSWORD = "geekshop"
-# EMAIL_USE_SSL = False
+load_dotenv()
+EMAIL_HOST_USER = os.getenv("EMAIL")
+EMAIL_HOST_PASSWORD = os.getenv("PASSWORD")
+EMAIL_USE_TLS = False
 # If server support TLS:
-# EMAIL_USE_TLS = True
+EMAIL_USE_SSL = True
+
+SERVER_EMAIL = EMAIL_HOST_USER
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 # Email as files for debug
-EMAIL_BACKEND = "django.core.mail.backends.filebased.EmailBackend"
-EMAIL_FILE_PATH = "var/email-messages/"
+# EMAIL_BACKEND = "django.core.mail.backends.filebased.EmailBackend"
+# EMAIL_FILE_PATH = "var/email-messages/"

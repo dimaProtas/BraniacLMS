@@ -124,7 +124,7 @@ class ContactsPageView(TemplateView):
                     timeout=300,
                 )
                 messages.add_message(self.request, messages.INFO, _("Message sended"))
-                mainapp_tasks.send_feedback_mail.delay(
+                mainapp_tasks.send_my_mail.delay(
                     {
                         "user_id": self.request.POST.get("user_id"),
                         "message": self.request.POST.get("message"),
