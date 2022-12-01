@@ -1,4 +1,6 @@
 {% extends 'base.html' %}
+{% load static markdownify crispy_forms_tags cache %}
+
 
 {% block title %}
 Новости
@@ -13,6 +15,8 @@
   </div>
 </div>
 {% endif %}
+
+{% cache 300 news_list %}
 
 <div class="row">
   <div class="col-lg-8">
@@ -48,6 +52,7 @@
       </div>
     </div>
     {% endfor %}
+    {% endcache %}
 
   </div>
 
