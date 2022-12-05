@@ -152,8 +152,8 @@ class TestNewsSelenium(StaticLiveServerTestCase):
         button_enter = WebDriverWait(self.selenium, 5).until(
             EC.visibility_of_element_located((By.CSS_SELECTOR, '[type="submit"]'))
         )
-        self.selenium.find_element_by_id("id", "id_username").send_keys("admin")
-        self.selenium.find_element_by_id("id", "id_password").send_keys("admin")
+        self.selenium.find_element("id", "id_username").send_keys("admin")
+        self.selenium.find_element("id", "id_password").send_keys("admin")
         button_enter.click()
         # Wait for footer
         WebDriverWait(self.selenium, 5).until(EC.visibility_of_element_located((By.CLASS_NAME, "mt-auto")))

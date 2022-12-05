@@ -3,7 +3,7 @@
         "model": "authapp.customuser",
         "pk": 1,
         "fields": {
-            "password": "pbkdf2_sha256$260000$vNK7LRbyZjjMFaFoh6nYQm$w6qmPwBvMRAoLHC5Q7ZNuMC5h+K7rDI/3XSuhHofZxM=",
+            "password": "pbkdf2_sha256$260000$43I17iQsRALBPCuBZLx4V2$6KzNpNoLEsSR/6dxOSTrM/juZhaXp+mpeT8Ivlh2Mb4=",
             "last_login": "2022-01-01T01:02:03.044Z",
             "is_superuser": true,
             "username": "admin",
@@ -11,7 +11,7 @@
             "last_name": "",
             "age": null,
             "avatar": "",
-            "email": "admin@local.ru",
+            "email": "protasevich91@yandex.ru",
             "is_staff": true,
             "is_active": true,
             "date_joined": "2022-01-01T00:01:02.033Z",
