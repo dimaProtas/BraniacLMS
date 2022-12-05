@@ -268,3 +268,5 @@ DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 # EMAIL_FILE_PATH = "var/email-messages/"
 
 LOCALE_PATHS = [BASE_DIR / "locale"]
+
+SELENIUM_DRIVER_PATH_FF = BASE_DIR / "var" / "selenium" / "geckodriver"
