@@ -70,3 +70,6 @@ wcwidth==0.2.5
 webencodings==0.5.1
 wsproto==1.2.0
 zipp==3.10.0
+# For production
+gunicorn
+psycopg2-binary
